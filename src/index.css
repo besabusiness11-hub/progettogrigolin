@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Industrial Premium — Gruppo Grigolin (Light) */
+    --background: 0 0% 98%;
+    --foreground: 150 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 15%;
+
+    /* Grigolin Green — evolved */
+    --primary: 152 72% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light concrete */
+    --secondary: 150 5% 92%;
+    --secondary-foreground: 150 10% 35%;
+
+    --muted: 150 5% 94%;
+    --muted-foreground: 150 5% 45%;
+
+    --accent: 152 50% 92%;
+    --accent-foreground: 152 72% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 10% 88%;
+    --input: 150 10% 88%;
+    --ring: 152 72% 32%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --green-glow: 152 72% 42%;
+    --green-deep: 152 50% 22%;
+    --concrete: 150 5% 80%;
+    --concrete-light: 150 5% 90%;
+    --steel: 210 8% 55%;
+    --warm-white: 40 20% 95%;
+    --gold: 42 80% 55%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 150 10% 15%;
+    --sidebar-primary: 152 72% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 5% 94%;
+    --sidebar-accent-foreground: 150 10% 15%;
+    --sidebar-border: 150 10% 88%;
+    --sidebar-ring: 152 72% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-green {
+    background: linear-gradient(135deg, hsl(152 72% 32%), hsl(152 72% 25%), hsl(152 50% 22%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(150 5% 94%) 100%);
+  }
+
+  .bg-gradient-concrete {
+    background: linear-gradient(135deg, hsl(150 5% 96%) 0%, hsl(150 5% 92%) 100%);
+  }
+
+  .border-glow {
+    border-color: hsl(152 72% 32% / 0.3);
+  }
+
+  .shadow-green {
+    box-shadow: 0 0 40px -10px hsl(152 72% 32% / 0.3);
+  }
+
+  .line-accent {
+    position: relative;
+  }
+
+  .line-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, hsl(152 72% 32%), hsl(152 72% 42%));
+    border-radius: 2px;
+  }
+}
