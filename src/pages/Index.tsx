@@ -8,7 +8,6 @@ import CompaniesSection from "@/components/CompaniesSection";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import 'leaflet/dist/leaflet.css';
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
